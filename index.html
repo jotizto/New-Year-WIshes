@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy New Year, Naomi ♡</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink-bg: #fff1fb;
+      --pink-light: #ffe6f7;
+      --pink: #ffb6dd;
+      --pink-deep: #ff4f9a;
+      --ink: #3a2238;
+      --paper: #fffdfc;
+      --shadow-soft: 0 14px 30px rgba(255, 105, 180, 0.35);
+      --radius-card: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top left, #ffe1f3 0%, #fff1fb 45%, #ffeef9 90%);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 24px 16px 70px;
+      position: relative;
+    }
+
+    /* floating doodles */
+    .doodle {
+      position: fixed;
+      opacity: 0.4;
+      z-index: -1;
+      filter: blur(0.4px);
+      font-size: 30px;
+    }
+
+    .doodle.star { top: 12%; left: 6%; }
+    .doodle.heart { bottom: 8%; right: 6%; }
+    .doodle.flower { top: 65%; left: 8%; }
+
+    /* sakura petals */
+    .petal {
+      position: fixed;
+      top: -10vh;
+      font-size: 14px;
+      opacity: 0.85;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) translateX(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) translateX(40px) rotate(360deg);
+      }
+    }
+
+    /* header + nav */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #ffb6dd);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 18px rgba(255, 105, 180, 0.55);
+      font-size: 18px;
+    }
+
+    .logo-text {
+      font-family: "Sacramento", cursive;
+      font-size: 30px;
+      color: var(--pink-deep);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      font-size: 12px;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 182, 221, 0.9);
+      color: var(--ink);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background: #ffd9f0;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(255, 105, 180, 0.25);
+    }
+
+    /* hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 22px;
+      margin-bottom: 26px;
+      align-items: center;
+    }
+
+    .hero-sub {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #b2769a;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 4vw, 38px);
+      line-height: 1.15;
+      margin-bottom: 8px;
+      color: #3a2035;
+    }
+
+    .hero h1 span {
+      color: var(--pink-deep);
+    }
+
+    .hero p {
+      font-size: 14px;
+      max-width: 520px;
+      margin-bottom: 8px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 10px 0 12px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffe6f7;
+      border: 1px dashed #ffb6dd;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff7fba, #ff9fd0);
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(255, 105, 180, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 20px 40px rgba(255, 105, 180, 0.65);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--ink);
+      border: 1px solid #ffc9e3;
+    }
+
+    .btn-ghost:hover {
+      background: #ffe4f5;
+      transform: translateY(-1px);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    /* hero scrapbook card */
+    .hero-card {
+      background: var(--paper);
+      border-radius: var(--radius-card);
+      padding: 16px 14px 16px;
+      border: 1px solid #ffcfe6;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 70px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      top: -8px;
+      left: 22%;
+      transform: rotate(-6deg);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 70px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      top: -10px;
+      right: 16%;
+      transform: rotate(5deg);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+
+    .hero-card-title {
+      font-size: 13px;
+      color: #b26a93;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-card-main {
+      background: #ffe9f5;
+      border-radius: 16px;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .hero-dog {
+      font-size: 32px;
+    }
+
+    .hero-card-main h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-main p {
+      font-size: 12px;
+    }
+
+    .hero-card-list {
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    .hero-card-list li {
+      margin-left: 14px;
+      margin-bottom: 2px;
+    }
+
+    .hero-note {
+      font-size: 11px;
+      color: #aa6b93;
+      margin-top: 6px;
+      text-align: right;
+    }
+
+    /* sections */
+    section {
+      margin-bottom: 26px;
+    }
+
+    .card {
+      background: var(--paper);
+      border-radius: var(--radius-card);
+      padding: 16px 14px 18px;
+      border: 1px solid #ffd4ea;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      color: var(--pink-deep);
+      margin-bottom: 8px;
+    }
+
+    .section-title span {
+      font-size: 22px;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: #90617f;
+      margin-bottom: 10px;
+      max-width: 620px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 11px;
+    }
+
+    .pill {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ffe6f7;
+      border: 1px dashed #ffb6dd;
+    }
+
+    .small {
+      font-size: 12px;
+      color: #8a607c;
+    }
+
+    /* gallery polaroids */
+    .polaroid-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .polaroid {
+      width: 150px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 8px 8px 10px;
+      box-shadow: 0 18px 36px rgba(255, 105, 180, 0.45);
+      text-align: center;
+      border: 1px solid #ffd4ea;
+      position: relative;
+    }
+
+    .polaroid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .polaroid p {
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    .polaroid.one { transform: rotate(-3deg); }
+    .polaroid.two { transform: rotate(2deg); }
+    .polaroid.three { transform: rotate(-1deg); }
+
+    .tape-top {
+      position: absolute;
+      width: 50px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.7);
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-4deg);
+      border-radius: 4px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+
+    /* music section */
+    .music-embeds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    /* timeline */
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .timeline li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 6px;
+    }
+
+    .timeline li::before {
+      content: "✧";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--pink-deep);
+      font-size: 12px;
+    }
+
+    /* dogs */
+    .dog-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .dog-stickers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 24px;
+      margin: 8px 0;
+    }
+
+    .dog-stickers span {
+      background: #fff0fb;
+      border-radius: 16px;
+      padding: 6px 8px;
+      box-shadow: 0 10px 20px rgba(255, 105, 180, 0.25);
+    }
+
+    .dog-polaroid {
+      background: linear-gradient(135deg, #ffe8f6, #ffffff);
+      border-radius: 18px;
+      padding: 12px;
+      border: 1px solid #ffcfe6;
+      box-shadow: 0 18px 38px rgba(255, 105, 180, 0.45);
+      transform: rotate(-2deg);
+      position: relative;
+    }
+
+    .dog-polaroid .tape-top {
+      top: -7px;
+      transform: translateX(-50%) rotate(4deg);
+    }
+
+    .dog-card-inner {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .dog-card-inner .big-dog {
+      font-size: 38px;
+    }
+
+    .dog-tagline {
+      font-size: 11px;
+      color: #9d6e93;
+      margin-bottom: 6px;
+    }
+
+    /* japan corner */
+    .jp-phrase {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .jp-romaji {
+      font-size: 12px;
+      color: #a3698d;
+      margin-bottom: 6px;
+    }
+
+    .jp-meaning {
+      font-size: 13px;
+    }
+
+    /* letter section & modal */
+    .letter-card {
+      text-align: center;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.32);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 30;
+    }
+
+    .modal {
+      max-width: 540px;
+      width: 100%;
+      background: linear-gradient(145deg, #fff7fd, #ffe3f3);
+      border-radius: 24px;
+      padding: 18px 16px 16px;
+      border: 1px solid #ffcfe6;
+      box-shadow: 0 26px 60px rgba(255, 105, 180, 0.6);
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .modal-title {
+      font-family: "Sacramento", cursive;
+      font-size: 28px;
+      color: var(--pink-deep);
+    }
+
+    .modal-close {
+      border: none;
+      background: transparent;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      font-size: 14px;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .modal-body p + p {
+      margin-top: 8px;
+    }
+
+    .modal-footer {
+      font-size: 11px;
+      text-align: right;
+      color: #8f6282;
+      margin-top: 8px;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: #935f81;
+      margin-top: 18px;
+    }
+
+    footer span {
+      font-family: "Sacramento", cursive;
+      font-size: 20px;
+      color: var(--pink-deep);
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .two-col,
+      .dog-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      main {
+        padding: 20px 12px 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- scrap-doodles -->
+  <div class="doodle star">✨</div>
+  <div class="doodle heart">🩷</div>
+  <div class="doodle flower">🌸</div>
+
+  <main>
+    <header>
+      <div class="logo">
+        <div class="logo-icon">🌸</div>
+        <div class="logo-text">Naomi’s Pink Scrapbook</div>
+      </div>
+      <nav>
+        <a href="#hero">home</a>
+        <a href="#about">about</a>
+        <a href="#hobbies">hobbies</a>
+        <a href="#music">music</a>
+        <a href="#favorites">favorites</a>
+        <a href="#gallery">gallery</a>
+        <a href="#timeline">timeline</a>
+        <a href="#dogs">dogs</a>
+        <a href="#japan">jp corner</a>
+        <a href="#letter">letter</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div>
+        <div class="hero-sub">new year · 2026 · for naomi</div>
+        <h1>For <span>Naomi</span>, who turns small moments into soft magic.</h1>
+       <p>
+  I made this little pink corner of the internet just for you. It’s filled with your favorite things, the stories you get lost in, and the small moments we’ve had together. On days when everything feels a bit too much, I hope this page reminds you that you matter a lot to me.
+</p>
+
+        </p>
+        <div class="tag-row">
+          <span class="tag">🌸 pink & flowers</span>
+          <span class="tag">🐶 dog person</span>
+          <span class="tag">📚 fantasy reader</span>
+          <span class="tag">🎧 taylor swift on repeat</span>
+          <span class="tag">💄 makeup & soft glam</span>
+        </div>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" onclick="openLetter()">Read your New Year letter 💌</button>
+          <a href="#music" class="btn btn-ghost">Go to your music section 🎧</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-title">
+          <span>Today’s Naomi moodboard</span>
+          <span>🩷</span>
+        </div>
+        <div class="hero-card-main">
+          <div class="hero-dog">🐶</div>
+          <div>
+            <h3>Certified Dog Lover</h3>
+            <p>
+              Happiness = you + a cute dog + zero responsibilities for 5 minutes.
+            </p>
+          </div>
+        </div>
+        <ul class="hero-card-list">
+          <li>🎧 Headphones on, thoughts a little quieter.</li>
+          <li>📖 Fantasy book open, real world on pause.</li>
+          <li>💄 Makeup as a small ritual of self-care.</li>
+          <li>🌸 Pink details making everything feel softer.</li>
+        </ul>
+        <div class="hero-note">
+          psst… keep scrolling, this page is literally made for you.
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT HER -->
+    <section id="about">
+      <h2 class="section-title"><span>🌷</span>About Naomi</h2>
+      <p class="section-sub">
+        If someone asked me to describe you, I’d probably show them this page
+        and say: “This is Naomi. Soft, thoughtful, a little chaotic in the
+        cutest way, and always living in at least three worlds at the same
+        time.”
+      </p>
+      <div class="two-col">
+        <div class="card">
+          <h3 style="font-size:15px;margin-bottom:6px;">Pink, flowers, and tiny details</h3>
+          <p style="font-size:13px;">
+            You make things softer just by liking them. Pink shades, floral
+            touches, and pretty little details. Somehow they all feel like extensions
+            of you. The world looks a bit warmer through your color palette.
+          </p>
+          <div class="pill-row">
+            <span class="pill">soft pink tones</span>
+            <span class="pill">flower motifs</span>
+            <span class="pill">cozy aesthetics</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="font-size:15px;margin-bottom:6px;">Soft but strong</h3>
+          <p style="font-size:13px;">
+            You feel things deeply and still keep going. You carry a lot in your
+            head and heart, but you continue to show up, learn, care, laugh,
+            and be there for others. That says more about you than you realize.
+          </p>
+          <div class="pill-row">
+            <span class="pill">quiet resilience</span>
+            <span class="pill">gentle heart</span>
+            <span class="pill">keeps trying</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section id="hobbies">
+      <h2 class="section-title"><span>🎨</span>Hobbies that make you glow</h2>
+      <p class="section-sub">
+        Some people “have hobbies”. You have entire universes made out of songs,
+        stories, and looks, each one a different version of you.
+      </p>
+      <div class="two-col">
+        <div class="card">
+          <h3 style="font-size:15px;margin-bottom:6px;">🎧 Listening to music</h3>
+          <p style="font-size:13px;">
+            Headphones in, world out. You’ve got songs for every mood doesn't matter 
+            if it's happy, sad, tired, or maybe overthinking-at-2am. Somewhere in all those playlists,
+            there’s a version of you that feels understood.
+          </p>
+          <p class="small">
+            (Top artist: Taylor Swift. Obviously.)
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="font-size:15px;margin-bottom:6px;">📚 Fantasy books & makeup</h3>
+          <p style="font-size:13px;">
+            You live in fantasy worlds and magic systems, then come back to this
+            world and create your own kind of magic with makeup. One builds your
+            imagination, the other becomes your quiet self-care ritual.
+          </p>
+          <div class="pill-row">
+            <span class="pill">dragons & spells</span>
+            <span class="pill">“one more chapter”</span>
+            <span class="pill">soft glam looks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MUSIC (TAYLOR SWIFT) -->
+    <section id="music">
+      <h2 class="section-title"><span>🎧</span>Naomi’s Music Corner</h2>
+      <p class="section-sub">
+        2025 Spotify Wrapped: Taylor Swift at the top. No surprise there.
+        Here’s a tiny “Naomi playlist” corner. Songs for soft nights,
+        overthinking, and feeling everything a bit too much.
+      </p>
+      <div class="card">
+        <p class="small">Here are the top songs you love most based on this entire year (2025).</p>
+        <div class="music-embeds">
+          <!-- Taylor Swift embeds: replace with your favorites if you want -->
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1qrpoAMXodY6895hGKoUpA?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2RdEC8Ff83WkX7kDVCHseE?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2plbrEY59IikOBgBGLjaoe?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <p class="small" style="margin-top:8px;">
+          If feelings were playlists, you’d be all the soft, honest ones.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAVORITES / MOVIES -->
+    <section id="favorites">
+      <h2 class="section-title"><span>🎬</span>Favorite Worlds & Stories</h2>
+      <p class="section-sub">
+        Your favorite movies and shows say a lot about you: you like a bit of
+        magic, a lot of chaos, plot twists, and stories where people try their
+        best even when things go wrong.
+      </p>
+      <div class="two-col">
+        <div class="card">
+          <h3 style="font-size:15px;margin-bottom:6px;">🪄 Fantasy & Adventure</h3>
+          <p style="font-size:13px;">
+            Harry Potter, the MCU, Stranger Things, and all the universes where
+            the impossible becomes normal. You like it when the world is a
+            little weird (portals, magic, powers, etc.) things that shouldn’t exist
+            but do.
+          </p>
+          <div style="margin-top:10px;padding:10px;border-radius:14px;background:#fff3fb;border:1px solid #ffc9e3;">
+            <h4 style="font-size:14px;margin-bottom:4px;">🌌 Special mention: Stranger Things</h4>
+            <p style="font-size:12px;">
+              Upside Down, 80s vibes, found family, and emotional damage in every season.
+              Comfort show energy, but with monsters.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="font-size:15px;margin-bottom:6px;">😆 + 👻 Comedy, Horror, Thriller</h3>
+          <p style="font-size:13px;">
+            You’re the perfect mix: you can laugh at dumb jokes and then sit
+            through horror and thriller like it’s nothing. You like the “what
+            happens next?!” feeling in stories that keep you on your toes.
+          </p>
+          <div class="pill-row">
+            <span class="pill">chaotic comedies</span>
+            <span class="pill">jump scares</span>
+            <span class="pill">plot twists</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY / POLAROID -->
+    <section id="gallery">
+      <h2 class="section-title"><span>📷</span>Our Little Gallery</h2>
+      <p class="section-sub">
+        Some of my favorite memories with you aren’t loud moments, they’re
+        quiet ones. Movie nights, parking lots, Switch games, and all the
+        small scenes that somehow stayed.
+      </p>
+      <div class="polaroid-wrap">
+        <!-- TODO: replace img1.jpg etc with your real photos in this folder -->
+        <div class="polaroid one">
+          <div class="tape-top"></div>
+          <img src="movie.jpeg" alt="Movie night">
+          <p>Movie night feelings 🎬</p>
+        </div>
+        <div class="polaroid two">
+          <div class="tape-top"></div>
+          <img src="img2.jpg" alt="Parking lot">
+          <p>Parking lot talks (I don't have the picture of it.. )🌙</p>
+        </div>
+        <div class="polaroid three">
+          <div class="tape-top"></div>
+          <img src="games.jpeg" alt="Switch games">
+          <p>Nintendo Switch & laughter 🎮</p>
+        </div>
+      </div>
+      <p class="small" style="margin-top:8px;">
+        One day this section will be full of our photos either past, present, or future ones.
+      </p>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline">
+      <h2 class="section-title"><span>🕰️</span>Our Moments Timeline</h2>
+      <p class="section-sub">
+        Not a strict timeline, more like a list of little checkpoints that
+        quietly became important to me.
+      </p>
+      <div class="card">
+        <ul class="timeline">
+          <li>Watching movies together, sharing reactions, pausing to talk about scenes.</li>
+          <li>Being in the parking lot when everything felt quieter and time moved slower.</li>
+          <li>Playing Nintendo Switch sometimes competitive, always fun.</li>
+          <li>All the “small” moments, inside jokes, and random conversations in between.</li>
+          <li>Hopefully more moments ahead in whatever form they come.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DOGS -->
+    <section id="dogs">
+      <h2 class="section-title"><span>🐾</span>Dog Lover’s Corner</h2>
+      <p class="section-sub">
+        If happiness had a shape, it would probably be you seeing a dog and
+        immediately melting. I’m convinced every dog you’ve met would pick you
+        as their favorite human.
+      </p>
+      <div class="dog-row">
+        <div class="card">
+          <h3 style="font-size:15px;margin-bottom:6px;">You + dogs = instant serotonin</h3>
+          <div class="dog-stickers">
+            <span>🐶</span>
+            <span>🐾</span>
+            <span>🦴</span>
+            <span>🩷</span>
+            <span>🎀</span>
+          </div>
+          <p style="font-size:13px;">
+            One day, I hope you get to keep your own dog, the one that follows you
+            around, sits with you when you’re tired, and becomes your little
+            emotional support chaos ball. I hope I get to see your face when
+            that happens.
+          </p>
+        </div>
+        <div class="dog-polaroid">
+          <div class="tape-top"></div>
+          <div class="dog-tagline">“Best Dog Person” award · unofficial but very real</div>
+          <div class="dog-card-inner">
+            <div class="big-dog">🐕</div>
+            <div>
+              <h4 style="font-size:14px;margin-bottom:4px;">Reserved for future photos</h4>
+              <p style="font-size:12px;">
+                Imagine this as a framed photo of you and your future dog. Until
+                that day comes, this spot is here waiting for that version of you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAPAN CORNER -->
+    <section id="japan">
+      <h2 class="section-title"><span>🌸</span>Naomi’s Japan Corner</h2>
+      <p class="section-sub">
+        Because your major gave you another world to fall in love with:
+        language, culture, and tiny details that feel like scenes from a
+        slice-of-life drama.
+      </p>
+      <div class="two-col">
+        <div class="card">
+          <h3 style="font-size:15px;margin-bottom:6px;">A small message for you in Japanese</h3>
+          <div class="jp-phrase">いつもがんばってくれてありがとう。</div>
+          <div class="jp-romaji">itsumo ganbatte kurete arigatou.</div>
+          <div class="jp-meaning">
+            Thank you for always trying your best. Even on days when you feel
+            like it’s not enough, I see how hard you’re trying and I’m very proud
+            for every little things you do.
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="font-size:15px;margin-bottom:6px;">A gentle reminder</h3>
+          <p style="font-size:13px;">
+            You’re allowed to be soft and strong at the same time. To love pink,
+            dogs, fantasy stories, and still survive all the plot twists life
+            throws at you. You’re not “too much”. You’re just very, very
+            beautifully Naomi.
+          </p>
+          <div class="pill-row">
+            <span class="pill">you’re doing your best</span>
+            <span class="pill">you’re allowed to rest</span>
+            <span class="pill">you’re not alone</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LETTER -->
+    <section id="letter">
+      <h2 class="section-title"><span>💌</span>A Letter for Naomi</h2>
+      <p class="section-sub">
+        This part is for the words I don’t want you to forget this year, 
+        the kind you can come back to when days feel heavy or too loud.
+      </p>
+      <div class="card letter-card">
+        <p class="small">
+          Click the button below to open your New Year letter. It’s made out of
+          movie nights, parking lots, Nintendo games, and a lot of quiet gratitude.
+        </p>
+        <button class="btn btn-primary" onclick="openLetter()">Open letter 💌</button>
+
+        <!-- Optional background music toggle (put yoursong.mp3 in the same folder) -->
+        <audio id="bgm" loop>
+  <source src="sparkle.mp3" type="audio/mpeg">
+</audio>
+<button class="btn btn-ghost" style="margin-top:10px;" onclick="toggleMusic()">
+  🎶 Play / Pause music
+</button>
+<p class="small" style="margin-top:6px;">
+  (background: Sparkle – piano version, just to make the page feel a bit like a quiet movie scene)
+</p>
+      </div>
+    </section>
+
+    <footer>
+      Built with way too much fondness by <span>someone who’s really grateful for you</span>.
+    </footer>
+  </main>
+
+  <!-- LETTER MODAL -->
+  <div class="modal-backdrop" id="letterModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">To Naomi, for 2026</div>
+        <button class="modal-close" onclick="closeLetter()">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Personalized letter -->
+        <p>
+          Naomi, before this year runs too fast, I wanted you to have something
+          you can return to, something that reminds you of the moments we
+          shared, and of how grateful I am to have lived them with you.
+        </p>
+        <p>
+          When I think about us, I don’t just remember big events. I remember
+          the soft, ordinary moments that somehow felt special. Watching movies
+          together, sitting in the parking lot when the world felt quiet, playing
+          Nintendo Switch and laughing over silly things, and all those small
+          familiar moments that make time feel slower.
+        </p>
+        <p>
+          None of those moments were loud or grand, yet they stay with me.
+          Maybe that’s the magic of you. Everything feels a little warmer,
+          calmer, lighter, and of course "adventurous" when you’re around.
+        </p>
+        <p>
+          I admire the way you try, even on days that don’t feel easy. Your
+          softness isn’t weakness, Naomi. It’s one of the reasons the world
+          feels a bit gentler when you’re in it. I hope 2026 is kind to you,
+          and that you’re kind to yourself too.
+        </p>
+        <p>
+          I hope we get more quiet nights, more movies, more Switch games, more
+          laughter in places people don’t pay attention to, more small moments
+          that somehow mean everything.
+        </p>
+        <p>
+          So for 2026, I wish you comfort when you feel tired, music when your
+          thoughts get too loud, stories that make you feel seen, and people who
+          make you feel safe.
+        </p>
+        <p>
+          Thank you for the time we’ve shared, for every little moment, none of
+          it feels little to me.
+        </p>
+        <p>
+          今年もずっと笑顔でいてね。💗  
+          <span class="small"> (I hope this year keeps you smiling.)</span>
+        </p>
+        <p>
+          Happy New Year, Naomi. You deserve so much good ahead.
+        </p>
+      </div>
+      <div class="modal-footer">
+        you can close this tab, but not the fact that I’m quietly cheering for you.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sakura petals
+    (function createPetals() {
+      const total = 26; // number of petals
+      for (let i = 0; i < total; i++) {
+        const petal = document.createElement("div");
+        petal.classList.add("petal");
+        petal.textContent = "🌸";
+        const size = 12 + Math.random() * 12;
+        petal.style.fontSize = size + "px";
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDuration = 8 + Math.random() * 10 + "s";
+        petal.style.animationDelay = Math.random() * 5 + "s";
+        document.body.appendChild(petal);
+      }
+    })();
+
+    // Letter modal
+    const letterModal = document.getElementById("letterModal");
+
+    function openLetter() {
+      letterModal.style.display = "flex";
+    }
+
+    function closeLetter() {
+      letterModal.style.display = "none";
+    }
+
+    letterModal.addEventListener("click", (e) => {
+      if (e.target === letterModal) {
+        closeLetter();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeLetter();
+      }
+    });
+
+    // Background music toggle
+    function toggleMusic() {
+      const audio = document.getElementById("bgm");
+      if (!audio) return;
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
+</body>
+</html>
+<script>
+  function toggleMusic() {
+    const audio = document.getElementById("bgm");
+    if (!audio) return;
+
+    if (audio.paused) {
+      audio.volume = 0.3;
+      audio.play().catch(() => {});
+    } else {
+      audio.pause();
+    }
+  }
+</script>
