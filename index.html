@@ -419,7 +419,7 @@
     /* music section */
     .music-embeds {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 10px;
       margin-top: 10px;
     }
@@ -586,6 +586,42 @@
       margin-top: 8px;
     }
 
+    /* Confetti pieces */
+    .confetti {
+      position: fixed;
+      top: -10px;
+      width: 8px;
+      height: 14px;
+      background: pink;
+      opacity: 0.9;
+      border-radius: 2px;
+      pointer-events: none;
+      animation: confetti-fall 1.8s linear forwards;
+      z-index: 50;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+
+    /* Dog click animation */
+    .dog-animate {
+      animation: dog-wiggle 0.5s ease-in-out;
+    }
+
+    @keyframes dog-wiggle {
+      0% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-4px) rotate(-4deg); }
+      50% { transform: translateY(0) rotate(3deg); }
+      75% { transform: translateY(-3px) rotate(-2deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+
     /* footer */
     footer {
       text-align: center;
@@ -657,10 +693,8 @@
       <div>
         <div class="hero-sub">new year · 2026 · for naomi</div>
         <h1>For <span>Naomi</span>, who turns small moments into soft magic.</h1>
-       <p>
-  I made this little pink corner of the internet just for you. It’s filled with your favorite things, the stories you get lost in, and the small moments we’ve had together. On days when everything feels a bit too much, I hope this page reminds you that you matter a lot to me.
-</p>
-
+        <p>
+          I made this little pink corner of the internet just for you. It’s filled with your favorite things, the stories you get lost in, and the small moments we’ve had together. On days when everything feels a bit too much, I hope this page reminds you that you matter a lot to me.
         </p>
         <div class="tag-row">
           <span class="tag">🌸 pink & flowers</span>
@@ -751,7 +785,7 @@
         <div class="card">
           <h3 style="font-size:15px;margin-bottom:6px;">🎧 Listening to music</h3>
           <p style="font-size:13px;">
-            Headphones in, world out. You’ve got songs for every mood doesn't matter 
+            Headphones in, world out. You’ve got songs for every mood, it doesn't matter 
             if it's happy, sad, tired, or maybe overthinking-at-2am. Somewhere in all those playlists,
             there’s a version of you that feels understood.
           </p>
@@ -786,10 +820,9 @@
       <div class="card">
         <p class="small">Here are the top songs you love most based on this entire year (2025).</p>
         <div class="music-embeds">
-          <!-- Taylor Swift embeds: replace with your favorites if you want -->
-          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1qrpoAMXodY6895hGKoUpA?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2RdEC8Ff83WkX7kDVCHseE?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2plbrEY59IikOBgBGLjaoe?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1qrpoAMXodY6895hGKoUpA?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2RdEC8Ff83WkX7kDVCHseE?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2plbrEY59IikOBgBGLjaoe?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <p class="small" style="margin-top:8px;">
           If feelings were playlists, you’d be all the soft, honest ones.
@@ -847,7 +880,6 @@
         small scenes that somehow stayed.
       </p>
       <div class="polaroid-wrap">
-        <!-- TODO: replace img1.jpg etc with your real photos in this folder -->
         <div class="polaroid one">
           <div class="tape-top"></div>
           <img src="movie.jpeg" alt="Movie night">
@@ -856,7 +888,7 @@
         <div class="polaroid two">
           <div class="tape-top"></div>
           <img src="img2.jpg" alt="Parking lot">
-          <p>Parking lot talks (I don't have the picture of it.. )🌙</p>
+          <p>Parking lot talks (I don't have the picture of it..) 🌙</p>
         </div>
         <div class="polaroid three">
           <div class="tape-top"></div>
@@ -880,7 +912,7 @@
         <ul class="timeline">
           <li>Watching movies together, sharing reactions, pausing to talk about scenes.</li>
           <li>Being in the parking lot when everything felt quieter and time moved slower.</li>
-          <li>Playing Nintendo Switch sometimes competitive, always fun.</li>
+          <li>Playing Nintendo Switch, sometimes competitive, always fun.</li>
           <li>All the “small” moments, inside jokes, and random conversations in between.</li>
           <li>Hopefully more moments ahead in whatever form they come.</li>
         </ul>
@@ -916,12 +948,12 @@
           <div class="tape-top"></div>
           <div class="dog-tagline">“Best Dog Person” award · unofficial but very real</div>
           <div class="dog-card-inner">
-            <div class="big-dog">🐕</div>
+            <div class="big-dog" id="clickDog" title="tap me">🐕</div>
             <div>
               <h4 style="font-size:14px;margin-bottom:4px;">Reserved for future photos</h4>
               <p style="font-size:12px;">
                 Imagine this as a framed photo of you and your future dog. Until
-                that day comes, this spot is here waiting for that version of you.
+                that day comes, this spot is here waiting for that version of you. (Try clicking the dog!)
               </p>
             </div>
           </div>
@@ -945,7 +977,7 @@
           <div class="jp-meaning">
             Thank you for always trying your best. Even on days when you feel
             like it’s not enough, I see how hard you’re trying and I’m very proud
-            for every little things you do.
+            for every little thing you do.
           </div>
         </div>
         <div class="card">
@@ -965,11 +997,17 @@
       </div>
     </section>
 
+    <!-- Bark sound for dog (optional, add bark.mp3 in same folder) -->
+    <audio id="barkSound">
+      <source src="bark.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- LETTER -->
     <section id="letter">
       <h2 class="section-title"><span>💌</span>A Letter for Naomi</h2>
       <p class="section-sub">
-        This part is for the words I don’t want you to forget this year, the kind you can come back to when days feel heavy or too loud.
+        This part is for the words I don’t want you to forget this year, 
+        the kind you can come back to when days feel heavy or too loud.
       </p>
       <div class="card letter-card">
         <p class="small">
@@ -978,16 +1016,16 @@
         </p>
         <button class="btn btn-primary" onclick="openLetter()">Open letter 💌</button>
 
-        <!-- Optional background music toggle (put yoursong.mp3 in the same folder) -->
+        <!-- background music toggle -->
         <audio id="bgm" loop>
-  <source src="sparkle.mp3" type="audio/mpeg">
-</audio>
-<button class="btn btn-ghost" style="margin-top:10px;" onclick="toggleMusic()">
-  🎶 Play / Pause music
-</button>
-<p class="small" style="margin-top:6px;">
-  (background: Sparkle – piano version, just to make the page feel a bit like a quiet movie scene)
-</p>
+          <source src="sparkle.mp3" type="audio/mpeg">
+        </audio>
+        <button class="btn btn-ghost" style="margin-top:10px;" onclick="toggleMusic()">
+          🎶 Play / Pause music
+        </button>
+        <p class="small" style="margin-top:6px;">
+          (background: Sparkle – piano version, just to make the page feel a bit like a quiet movie scene)
+        </p>
       </div>
     </section>
 
@@ -1004,7 +1042,6 @@
         <button class="modal-close" onclick="closeLetter()">✕</button>
       </div>
       <div class="modal-body">
-        <!-- Personalized letter -->
         <p>
           Naomi, before this year runs too fast, I wanted you to have something
           you can return to, something that reminds you of the moments we
@@ -1059,7 +1096,7 @@
   <script>
     // Sakura petals
     (function createPetals() {
-      const total = 26; // number of petals
+      const total = 26;
       for (let i = 0; i < total; i++) {
         const petal = document.createElement("div");
         petal.classList.add("petal");
@@ -1100,26 +1137,67 @@
     function toggleMusic() {
       const audio = document.getElementById("bgm");
       if (!audio) return;
+
       if (audio.paused) {
+        audio.volume = 0.3;
         audio.play().catch(() => {});
       } else {
         audio.pause();
       }
     }
+
+    // Confetti on scroll near bottom
+    let confettiTriggered = false;
+
+    function launchConfetti() {
+      const colors = ["#ffb6dd", "#ffd1e8", "#ffe6f7", "#ffc4d8", "#f9a8d4"];
+      const pieces = 80;
+
+      for (let i = 0; i < pieces; i++) {
+        const conf = document.createElement("div");
+        conf.classList.add("confetti");
+        conf.style.left = Math.random() * 100 + "vw";
+        conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        conf.style.animationDuration = 1.4 + Math.random() * 0.8 + "s";
+        conf.style.transform = "rotate(" + (Math.random() * 360) + "deg)";
+        document.body.appendChild(conf);
+
+        setTimeout(() => {
+          conf.remove();
+        }, 2000);
+      }
+    }
+
+    window.addEventListener("scroll", () => {
+      const scrollPosition = window.innerHeight + window.scrollY;
+      const bottomThreshold = document.body.offsetHeight - 150;
+
+      if (!confettiTriggered && scrollPosition >= bottomThreshold) {
+        confettiTriggered = true;
+        launchConfetti();
+      }
+    });
+
+    // Dog click: bark + wiggle
+    const clickDog = document.getElementById("clickDog");
+    const barkSound = document.getElementById("barkSound");
+
+    if (clickDog) {
+      clickDog.style.cursor = "pointer";
+
+      clickDog.addEventListener("click", () => {
+        clickDog.classList.add("dog-animate");
+
+        if (barkSound) {
+          barkSound.currentTime = 0;
+          barkSound.play().catch(() => {});
+        }
+
+        setTimeout(() => {
+          clickDog.classList.remove("dog-animate");
+        }, 550);
+      });
+    }
   </script>
 </body>
 </html>
-<script>
-  function toggleMusic() {
-    const audio = document.getElementById("bgm");
-    if (!audio) return;
-
-    if (audio.paused) {
-      audio.volume = 0.3;
-      audio.play().catch(() => {});
-    } else {
-      audio.pause();
-    }
-  }
-</script>
-
